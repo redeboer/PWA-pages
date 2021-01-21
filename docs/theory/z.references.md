@@ -4,8 +4,7 @@
 
 :::{tip}
 
-Download this bibliography as BibTeX
-{download}`here </bibliography-Theory.bib>`.
+Download this bibliography as BibTeX {download}`here </bibliography-Theory.bib>`.
 
 :::
 
@@ -36,8 +35,6 @@ notcited:
 
 :::{toggle}
 
-See
-[here](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html#unresolved-citations-across-documents)
-for why this page is called {doc}`z.references </theory/z.references>`.
+See [here](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html#unresolved-citations-across-documents) for why this page is called {doc}`z.references </theory/z.references>`.
 
 :::

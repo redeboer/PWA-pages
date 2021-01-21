@@ -13,7 +13,9 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same"
   },
   "[pip-requirements]": {
     "editor.wordWrap": "off"

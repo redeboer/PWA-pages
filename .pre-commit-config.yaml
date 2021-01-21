@@ -22,6 +22,8 @@ repos:
             .*\.bib|
             .*\.svg
           )$
+
+
       - id: mixed-line-ending
       - id: trailing-whitespace
 
