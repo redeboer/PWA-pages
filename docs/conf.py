@@ -177,8 +177,8 @@ from typing import Any, Dict, List, Optional, Tuple
 from docutils.nodes import Node as docutils_Node
 from docutils.nodes import system_message
 from docutils.parsers.rst.states import Inliner
-from sphinx.application import Sphinx  # type: ignore
-from sphinx.util.typing import RoleFunction  # type: ignore
+from sphinx.application import Sphinx
+from sphinx.util.typing import RoleFunction
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -217,12 +217,12 @@ def wikilink(pattern: str) -> RoleFunction:
 import dataclasses
 from typing import Union
 
-import sphinxcontrib.bibtex.plugin  # type: ignore
-from pybtex.database import Entry  # type: ignore
-from pybtex.plugin import register_plugin  # type: ignore
-from pybtex.richtext import BaseText, Tag, Text  # type: ignore
-from pybtex.style.formatting.unsrt import Style as UnsrtStyle  # type: ignore
-from pybtex.style.template import (  # type: ignore
+import sphinxcontrib.bibtex.plugin
+from pybtex.database import Entry
+from pybtex.plugin import register_plugin
+from pybtex.richtext import BaseText, Tag, Text
+from pybtex.style.formatting.unsrt import Style as UnsrtStyle
+from pybtex.style.template import (
     FieldIsMissing,
     Node,
     _format_list,
@@ -233,14 +233,21 @@ from pybtex.style.template import (  # type: ignore
     sentence,
     words,
 )
-from sphinxcontrib.bibtex.style.referencing.author_year import (  # type: ignore
+from sphinxcontrib.bibtex.style.referencing import BracketStyle
+from sphinxcontrib.bibtex.style.referencing.author_year import (
     AuthorYearReferenceStyle,
+)
+
+no_brackets = BracketStyle(
+    left="",
+    right="",
 )
 
 
 @dataclasses.dataclass
 class NoCommaReferenceStyle(AuthorYearReferenceStyle):
     author_year_sep: Union["BaseText", str] = " "
+    bracket_parenthetical: BracketStyle = no_brackets
 
 
 sphinxcontrib.bibtex.plugin.register_plugin(
